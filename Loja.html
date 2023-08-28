@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <title>Loja</title>
+    <style>
+         .p{
+        background: linear-gradient(to bottom, #99ff84, #4b48ff);
+        margin: 0px;
+        padding: 20px;
+        color: white;
+        }
+        .link {
+        display: inline;
+        margin-right: 20px;
+        color: white;
+        text-decoration: none;
+        object-fit: cover;
+        transition: transform 0.3s;
+        float: center;
+        }
+        .link2 {
+        display: inline-block;
+        margin-right: 20px;
+        color: white;
+        text-decoration: none;
+        object-fit: cover;
+        transition: transform 0.3s;
+        }
+        .link:hover{
+        color: rgb(255, 255, 255);
+        transform: scale(1.2);
+        float: center;
+        }
+        .roda .dowm_up{
+            text-align: center;
+            color: white;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
+            font-size: 4em;
+        }
+        .roda .down_meio{
+            text-align: center;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        .roda .down_down{
+            text-align: center;
+        }
+        .roda .down_down img{
+            width: 40px;
+            cursor: pointer;
+            margin: 20px;
+            padding: 5px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .roda .down_down img.hover{
+            transform: scale(1.2);
+        }
+        .link {
+        display: inline-block;
+        margin-right: 20px;
+        color: white;
+        text-decoration: none;
+        }
+        body:not(.dark-mode) {
+            background: linear-gradient(to bottom, #1c8aff, #00ff6c);
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+        }
+        .navbar {
+            background-color: rgb(14, 1, 255);
+        }
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+        .navbar-brand,
+        .nav-link {
+            color: #fff;
+            font-weight: bold;
+        font-size: 18px;
+        }
+        .navbar-nav .nav-link {
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ccc;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 41px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .slider.round {
+            border-radius: 34px;
+        }
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        .navbar-toggler-icon {
+            background-color: #fff;
+            border-radius: 2px;
+            width: 20px;
+            height: 2px;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+        .products-container {
+            background-color: #ffffff77;
+            margin: 55px auto;
+            max-width: 1200px;
+            padding: 38px;
+            border-radius: 14px;
+        }
+        .product-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .product-image {
+            flex: 0 0 200px;
+            margin-right: 20px;
+        }
+        .product-image img {
+            max-width: 100%;
+        }
+        .product-details {
+            flex: 1;
+        }
+        .product-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+        .product-price {
+            font-size: 16px;
+            color: #3a3a3a;
+            margin-bottom: 10px;
+        }
+        .product-installments {
+            font-size: 14px;
+            color: #3a3a3a;
+            margin-bottom: 10px;
+        }
+        .product-offer {
+            font-size: 16px;
+            color: #f00;
+            font-weight: bold;
+            margin-bottom: -20px;
+        }
+        .product-item:not(:last-child) {
+            margin-bottom: 40px;
+        }
+        .carousel-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .carousel-indicators {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        .carousel-banner {
+            height: 260px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .carousel-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-fit: contain;
+        }
+        .roda .down_down img {
+        width: 35px;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.3s;
+        }
+        .roda{
+            margin-top: -20px;
+            height: 390px;
+            background-color: #383838;
+            color: white;
+            transition: transform 0.3s;
+        }    
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><img src="img/logo.png" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="Index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Doação.html">DOAÇÃO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Portfólio.html">PORTFÓLIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Jogo.html">JOGO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Loja.html">LOJA</a>
+                </li>
+            </ul>
+            <div class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <label class="slider round" for="darkModeToggle"></label>
+            </div>
+        </div>
+        <a class="nav-link" href="#"></a><button class="button" id="form-open"><img src="img/login-.png" width="50px" height="50px"></button></a>
+    </nav>
+    <section class="home">
+        <div class="form_container">
+          <i class="uil uil-times form_close"></i>
+          <div class="form login_form">
+            <form action="#">
+              <h2>Login</h2>
+              <div class="input_box">
+                <input type="email" placeholder="Coloque seu email" required />
+                <i class="uil uil-envelope-alt email"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Coloque sua senha" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+              <div class="option_field">
+                <span class="checkbox">
+                  <input type="checkbox" id="check" />
+                  <label for="check">Lembrar-me</label>
+                </span>
+                <a href="#" class="forgot_pw">Esqueceu a senha?</a>
+              </div>
+              <div class="continue_with_google">
+                <button class="google_button"><i class="uil uil-google"></i>Continuar com o Google</button>
+              </div>
+              <button class="button">Login</button>
+              <div class="login_signup">Não tem uma conta? <a href="#" id="signup">Signup</a></div>
+            </form>
+          </div>
+          <div class="form signup_form">
+            <form action="#">
+              <h2>Signup</h2>
+              <div class="input_box">
+                <input type="email" placeholder="Coloque seu email" required />
+                <i class="uil uil-envelope-alt email"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Crie uma senha" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Confirme a senha" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+              <div class="continue_with_google">
+                <button class="google_button"><i class="uil uil-google"></i>Continuar com o Google</button>
+              </div>
+              <button class="button">Signup</button>
+              <div class="login_signup">Já tem uma conta? <a href="#" id="login">Login</a></div>
+            </form>
+          </div>
+        </div>
+        <div id="carouselBanner" class="carousel slide carousel-banner col-lg-13" data-ride="carousel" >
+            <ol class="carousel-indicators">
+                <li data-target="#carouselBanner" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselBanner" data-slide-to="1"></li>
+                <li data-target="#carouselBanner" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/parallaxbanner.png" alt="Banner 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/parallaxbanner1.png" alt="Banner 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/parallaxbanner3.png" alt="Banner 3">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselBanner" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselBanner" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="products-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="carousel1" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel1" data-slide-to="1"></li>
+                            <li data-target="#carousel1" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/camistt2.png" alt="Product 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/camistt.png" alt="Product 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/camistt3.png" alt="Product 1">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Camiseta</h2>
+                        <p class="product-price">Preço: 45.99</p>
+                        <p class="product-installments">3x 15,33 sem juros</p>
+                        <p class="product-offer">Oferta especial: 40% off<br>
+                        compre uma leve três</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="carousel2" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel2" data-slide-to="1"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/prod2.png" alt="Product 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/prod2.1.png" alt="Product 2">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Caneca</h2>
+                        <p class="product-price">Preço: 35.99</p>
+                        <p class="product-installments">3x 11,99 sem juros</p>
+                        <p class="product-offer">Oferta especial: 40% off</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="carousel3" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel3" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel3" data-slide-to="1"></li>
+                            <li data-target="#carousel3" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/prod3.png" alt="Product 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/prod3.1.png" alt="Product 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/prod3.2.png" alt="Product 3">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel3" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel3" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Almofada</h2>
+                        <p class="product-price">Preço: 45.99</p>
+                        <p class="product-installments">3x 15,33 sem juros</p>
+                        <p class="product-offer">Oferta especial: 40% off</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="carousel4" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel4" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel4" data-slide-to="1"></li>
+                            <li data-target="#carousel4" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/prod4.png" alt="Product 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/prod4.1.png" alt="Product 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/prod4.2.png" alt="Product 4">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel4" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel4" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Almofada</h2>
+                        <p class="product-price">Preço: 45.99</p>
+                        <p class="product-installments">3x 15,33 sem juros</p>
+                        <p class="product-offer">Oferta especial: 40% off</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="carousel8" class="carousel slide" data-ride="carouse8">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel8" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel8" data-slide-to="1"></li>
+                            <li data-target="#carousel8" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/cami.png" alt="Product 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/cami (2).png" alt="Product 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/cami (3).png" alt="Product 4">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel8" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel8" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Camiseta</h2>
+                        <p class="product-price">Preço: 45.99</p>
+                        <p class="product-installments">3x 15,33 sem juros</p>
+                        <p class="product-offer">Oferta especial: 40% off</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="carousel7" class="carousel slide" data-ride="carouse7">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel7" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel7" data-slide-to="1"></li>
+                            <li data-target="#carousel7" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/camis.png" alt="Product 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/camis (2).png" alt="Product 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/camis (3).png" alt="Product 4">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel7" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel7" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Camiseta</h2>
+                        <p class="product-price">Preço: 45.99</p>
+                        <p class="product-installments">3x 15,33 sem juros</p>
+                        <p class="product-offer">Oferta especial: 40% off</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="carousel5" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel5" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel5" data-slide-to="1"></li>
+                            <li data-target="#carousel5" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/prod1.png" alt="Product 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/prod1.2.png" alt="Product 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/prod1.3.png" alt="Product 1">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel5" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel5" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Camiseta</h2>
+                        <p class="product-price">Preço: 45.99</p>
+                        <p class="product-installments">3x 15,33 sem juros</p>
+                        <p class="product-offer">Oferta especial: 40% off</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="carousel6" class="carousel slide" data-ride="carousel6">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel6" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel6" data-slide-to="1"></li>
+                            <li data-target="#carousel6" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/cp1.png" width="2000px" height="2000px" alt="Product 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/cp2.png" alt="Product 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/cp3.png" alt="Product 1">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel6" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel6" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Copo</h2>
+                        <p class="product-price">Preço: 12.99</p>
+                        <p class="product-installments">2x 6,49 sem juros</p>
+                        <p class="product-offer">Oferta especial: 40% off<br>
+                        compre uma leve três</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="carousel13" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel13" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel13" data-slide-to="1"></li>
+                            <li data-target="#carousel13" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/bls 1.png" alt="Product 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/bls 2.png" alt="Product 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/bls 13.png" alt="Product 1">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel13" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel13" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <h2 class="product-title">Blusa</h2>
+                    <p class="product-price">Preço: 58.99</p>
+                    <p class="product-installments">3x 19,99 sem juros</p>
+                    <p class="product-offer">Oferta especial: 40% off<br>
+                    compre uma leve três</p>
+                </div>
+                <div class="col-md-3">
+                    <div id="carousel10" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel10" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel10" data-slide-to="1"></li>
+                            <li data-target="#carousel10" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/bn 1.png" alt="Product 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/bn 2.png" alt="Product 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/bn 3.png" alt="Product 1">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel10" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel10" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Boné</h2>
+                        <p class="product-price">Preço: 19.99</p>
+                        <p class="product-installments">2x 9,99 sem juros</p>
+                        <p class="product-offer">Oferta especial: 40% off</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="carousel11" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel11" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel11" data-slide-to="1"></li>
+                            <li data-target="#carousel11" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/prod3.png" alt="Product 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/prod3.1.png" alt="Product 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/prod3.2.png" alt="Product 3">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel11" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel11" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Almofada</h2>
+                        <p class="product-price">Preço: 45.99</p>
+                        <p class="product-installments">3x 15,33 sem juros</p>
+                        <p class="product-offer">Oferta especial: 40% off</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="carousel12" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel12" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel12" data-slide-to="1"></li>
+                            <li data-target="#carousel12" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/prod4.png" alt="Product 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/prod4.1.png" alt="Product 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/prod4.2.png" alt="Product 4">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel12" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel12" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <h2 class="product-title">Almofada</h2>
+                        <p class="product-price">Preço: 45.99</p>
+                        <p class="product-installments">3x 15,33 sem juros</p>
+                        <p class="product-offer">Oferta especial: 40% off</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="products-container">
+        <div class="row">
+            <div class="col-md-3">
+                <div id="carousel13" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel13" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel13" data-slide-to="1"></li>
+                        <li data-target="#carousel13" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/prod1.png" alt="Product 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/prod1.2.png" alt="Product 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/prod1.3.png" alt="Product 1">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel13" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel13" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Camiseta</h2>
+                    <p class="product-price">Preço: 45.99</p>
+                    <p class="product-installments">3x 15,33 sem juros</p>
+                    <p class="product-offer">Oferta especial: 40% off<br>
+                    compre uma leve três</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="carousel14" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel14" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel14" data-slide-to="1"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/prod2.png" alt="Product 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/prod2.1.png" alt="Product 2">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel14" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel14" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Caneca</h2>
+                    <p class="product-price">Preço: 35.99</p>
+                    <p class="product-installments">3x 11,99 sem juros</p>
+                    <p class="product-offer">Oferta especial: 40% off</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="carousel15" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel15" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel15" data-slide-to="1"></li>
+                        <li data-target="#carousel15" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/prod3.png" alt="Product 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/prod3.1.png" alt="Product 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/prod3.2.png" alt="Product 3">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel15" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel15" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Almofada</h2>
+                    <p class="product-price">Preço: 45.99</p>
+                    <p class="product-installments">3x 15,33 sem juros</p>
+                    <p class="product-offer">Oferta especial: 40% off</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="carousel16'" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel16" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel16" data-slide-to="1"></li>
+                        <li data-target="#carousel16" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/prod4.png" alt="Product 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/prod4.1.png" alt="Product 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/prod4.2.png" alt="Product 4">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel16" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel16" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Almofada</h2>
+                    <p class="product-price">Preço: 45.99</p>
+                    <p class="product-installments">3x 15,33 sem juros</p>
+                    <p class="product-offer">Oferta especial: 40% off</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="roda">
+        <br><br><br>
+        <div class="down_up">
+        <div class="down_meio">Nossas redes sociais<br>#FNG</div>
+        <div class="down_down">
+            <span><a href="https://www.tiktok.com/@fauna.guadians?is_from_webapp=1&sender_device=pc" class="link"><img src="img/tk.png" alt="tiktok" width="35" height="35"></a><a href="https://www.tiktok.com/@fauna.guadians?is_from_webapp=1&sender_device=pc" class="link2"><p class="link" href="https://www.tiktok.com/@fauna.guadians?is_from_webapp=1&sender_device=pc">@fauna.guardians</p></span>
+            <span>
+                <a href="https://www.instagram.com/faunaguardians/" class="link">
+                    <img src="img/in.png" alt="instagram" width="35" height="35"></a> 
+                    <a href="https://www.instagram.com/faunaguardians/" class="link2"><p class="link" href="https://www.instagram.com/faunaguardians/">Fauna Guardians</p></span>
+            <span>
+                <a href="https://www.youtube.com/channel/UCfz0MTQYrzC8WVH8FRD7x5Q" class="link">
+                    <img src="img/yt2.png" alt="youtube" width="35" height="35"></a>
+                    <p class="link" href="https://www.youtube.com/channel/UCfz0MTQYrzC8WVH8FRD7x5Q">@fauna.guardians</p></span>
+                    <br>
+                    <em>este site foi criado para fins educativos</em>
+        </div>
+    </div>
+    <script src="js/darkmode.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/xxxxxxxxxx.js" crossorigin="anonymous"></script>
+    <script src="js/login.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</body>
+</html>

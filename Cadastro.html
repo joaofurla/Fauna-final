@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/doação.css"/>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <style>
+
+
+
+        .navbar {
+            background-color: rgb(14, 1, 255);
+            margin-block-end: 20px;
+            margin-bottom: 0;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+        .navbar-brand,
+        .nav-link {
+            color: #fff;
+            font-weight: bold;
+        font-size: 18px;
+        }
+        .navbar-nav .nav-link {
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ccc;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 41px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .slider.round {
+            border-radius: 34px;
+        }
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        .navbar-toggler-icon {
+            background-color: #fff;
+            border-radius: 2px;
+            width: 20px;
+            height: 2px;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+        .p{
+        background: linear-gradient(to bottom, #99ff84, #4b48ff);
+        margin: 0px;
+        padding: 20px;
+        color: white;
+        }
+        .link {
+        display: inline;
+        margin-right: 20px;
+        color: white;
+        text-decoration: none;
+        object-fit: cover;
+        transition: transform 0.3s;
+        float: center;
+        }
+        .roda{
+            margin-top: -20px;
+            height: 400;
+            background-color: #383838;
+            color: white;
+            transition: transform 0.3s;
+        }        
+        .link2 {
+        display: inline-block;
+        margin-right: 20px;
+        color: white;
+        text-decoration: none;
+        object-fit: cover;
+        transition: transform 0.3s;
+        }
+        .link:hover{
+        color: rgb(255, 255, 255);
+        transform: scale(1.2);
+        float: center;
+        }
+        .roda .dowm_up{
+            text-align: center;
+            color: white;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
+            font-size: 4em;
+        }
+        .roda .down_meio{
+            text-align: center;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        .roda .down_down{
+            text-align: center;
+        }
+        .roda .down_down img{
+            width: 40px;
+            cursor: pointer;
+            margin: 20px;
+            padding: 5px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .roda .down_down img.hover{
+            transform: scale(1.2);
+        }
+        .link {
+        display: inline-block;
+        margin-right: 20px;
+        color: white;
+        text-decoration: none;
+        }
+        .roda .down_down img {
+        width: 35px;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.3s;
+        }
+        body{
+            background-image: url(imagens/imagem_fundo.jpg1.jpg);
+        }
+
+        #registration-form {
+        font-family:'Open Sans Condensed', sans-serif;
+            width: 400px;
+        min-width:250px;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        #registration-form .fieldset {
+            background-color:#d5d5d5;
+
+            border-radius: 3px;
+        
+        }
+
+        #registration-form legend {
+            text-align: center;
+            background-color: rgb(14, 1, 255);
+            width: 100%;
+            padding: 30px 0;
+            border-radius: 3px 3px 0 0;
+            color: white;
+        font-size:2em;
+        }
+
+        .fieldset form{
+        border:1px solid #2f2f2f;
+        margin:0 auto;
+        display:block;
+        width:100%;
+        padding:30px 20px;
+        box-sizing:border-box;
+        border-radius:0 0 3px 3px;
+        }
+        .placeholder #registration-form label {
+            display: none;
+        }
+        .no-placeholder #registration-form label{
+        margin-left:5px;
+        position:relative;
+        display:block;
+        color:grey;
+        text-shadow:0 1px white;
+        font-weight:bold;
+        }
+            /* all */
+            ::-webkit-input-placeholder { text-shadow:1px 1px 1px white; font-weight:bold; }
+            ::-moz-placeholder { text-shadow:0 1px 1px white; font-weight:bold; } /* firefox 19+ */
+            :-ms-input-placeholder { text-shadow:0 1px 1px white; font-weight:bold; } /* ie */
+            #registration-form input[type=text] {
+                padding: 15px 20px;
+                border-radius: 1px;
+            margin:5px auto;
+            background-color:#f7f7f7;
+                border: 1px solid silver;
+
+                -webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,0.2);
+                box-shadow: inset 0 1px 5px rgba(0,0,0,0.2), 0 1px rgba(255,255,255,.8);
+                width: 100%;
+
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                box-sizing: border-box;
+            -webkit-transition:background-color .5s ease;
+            -moz-transition:background-color .5s ease;
+            -o-transition:background-color .5s ease;
+            -ms-transition:background-color .5s ease;
+            transition:background-color .5s ease;
+        }
+        .no-placeholder #registration-form input[type=text] {
+            padding: 10px 20px;
+        }
+        #registration-form input[type=text]:active, .placeholder #registration-form input[type=text]:focus {
+                outline: none;
+                border-color: silver;
+            background-color:white;
+        }
+        #registration-form input[type=submit] {
+            font-family:'Open Sans Condensed', sans-serif;
+            text-transform:uppercase;
+            outline:none;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                box-sizing: border-box;
+                width: 100%;
+                background-color: rgb(14, 1, 255);
+                padding: 10px;
+                color: white;
+                border: 1px solid #3498db;
+                border-radius: 3px;
+                font-size: 1.5em;
+                font-weight: bold;
+                margin-top: 5px;
+                cursor: pointer;
+            position:relative;
+            top:0;
+        }
+         #registration-form input[type=submit]:hover {
+                background-color: #2980b9;
+        }
+        #registration-form input[type=submit]:active {
+            background:#5C8CA7;
+        }
+        .parsley-error-list{
+            background-color:#C34343;
+            padding: 5px 11px;
+            margin: 0;
+            list-style: none;
+            border-radius: 0 0 3px 3px;
+            margin-top:-5px;
+            margin-bottom:5px;
+            color:white;
+            border:1px solid #870d0d;
+            border-top:none;
+                -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            position:relative;
+            top:-1px;
+            text-shadow:0px 1px 1px #460909;
+                font-weight:700;
+            font-size:12px;
+        }
+        .parsley-error{
+                border-color:#870d0d!important;
+            border-bottom:none;
+        }
+            #registration-form select{
+                width:100%;
+                padding:5px;
+        }
+            ::-moz-focus-inner {
+            border: 0;
+        }
+        .button-33 {
+            background-color: rgb(0, 0, 0);
+            border-radius: 100px;
+            box-shadow: rgba(79, 90, 204, 0.2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            display: inline-block;
+            font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+            padding: 7px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 250ms;
+            border: 0;
+            font-size: 16px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><img src="img/logo.png" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="Index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Doação.html">DOAÇÃO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Portfólio.html">PORTFÓLIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Jogo.html">JOGO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Loja.html">LOJA</a>
+                </li>
+            </ul>
+            <div class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <label class="slider round" for="darkModeToggle"></label>
+            </div>
+            <a class="nav-link" href="#"></a><button class="button" id="form-open"><img src="img/login-.png" width="50px" height="50px"></button></a>
+        </div>
+       
+    </nav>
+    <section class="home">
+        <div class="form_container">
+          <i class="uil uil-times form_close"></i>
+          <div class="form login_form">
+            <form action="#">
+              <h2>Login</h2>
+              <div class="input_box">
+                <input type="email" placeholder="Coloque seu email" required />
+                <i class="uil uil-envelope-alt email"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Coloque sua senha" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+              <div class="option_field">
+                <span class="checkbox">
+                  <input type="checkbox" id="check" />
+                  <label for="check">Lembrar-me</label>
+                </span>
+                <a href="#" class="forgot_pw">Esqueceu a senha?</a>
+              </div>
+              <div class="continue_with_google">
+                <button class="google_button"><i class="uil uil-google"></i>Continuar com o Google</button>
+              </div>
+              <button class="button">Login</button>
+              <div class="login_signup">Não tem uma conta? <a href="#" id="signup">Signup</a></div>
+            </form>
+          </div>
+          <div class="form signup_form">
+            <form action="#">
+              <h2>Signup</h2>
+              <div class="input_box">
+                <input type="email" placeholder="Coloque seu email" required />
+                <i class="uil uil-envelope-alt email"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Crie uma senha" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Confirme a senha" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+              <div class="continue_with_google">
+                <button class="google_button"><i class="uil uil-google"></i>Continuar com o Google</button>
+              </div>
+              <button class="button">Signup</button>
+              <div class="login_signup">Já tem uma conta? <a href="#" id="login">Login</a></div>
+            </form>
+          </div>
+        </div>
+        <div id="registration-form">
+            <div class='fieldset'>
+            <legend>Realize sua doação!</legend>
+                <form action="#" method="post" data-validate="parsley">
+                    <div class='row'>
+                        <label for='firstname'>Nome</label>
+                        <input type="text" placeholder="Primeiro nome" name='firstname' id='firstname' data-required="true" data-error-message="Your First Name is required">
+                    </div>
+                    <div class='row'>
+                        <label for="email">Telefone</label>
+                        <input type="text" placeholder="E-mail"  name='email' data-required="true" data-type="email" data-error-message="Your E-mail is required">
+                    </div>
+                    <div class='row'>
+                        <label for="cemail">E-mail</label>
+                        <input type="text" placeholder="Valor da doação" name='cemail' data-required="true" data-error-message="Your E-mail must correspond">
+                    </div>
+                    <div class='row'>
+                        <label for="cemail">CEP</label>
+                        <input type="text" placeholder="Valor da doação" name='cemail' data-required="true" data-error-message="Your E-mail must correspond">
+                    </div>
+                    <div class='row'>
+                        <label for="cemail">Valor da doação</label>
+                        <input type="text" placeholder="Valor da doação" name='cemail' data-required="true" data-error-message="Your E-mail must correspond">
+                    </div>
+                    <input type="submit" value="Realizar doação" href="Cartão.html">
+                </form>
+            </div>
+        </div>
+        
+        <div>
+            <button class="button-33" role="button" ><a href="Cartão.html">Doe pelo cartão</button></a>
+            </div>
+            <div class="roda">
+                <br><br><br>
+                <div class="down_up">
+                    <div class="down_meio">Nossas redes sociais<br>#FNG</div>
+                    <div class="down_down">
+                        <span>
+                            <a href="https://www.tiktok.com/@fauna.guadians?is_from_webapp=1&sender_device=pc" class="link">
+                                <img src="img/tk.png" alt="tiktok" width="35" height="35">
+                            </a>
+                            <a href="https://www.tiktok.com/@fauna.guadians?is_from_webapp=1&sender_device=pc" class="link2">
+                                <p class="link">@fauna.guardians</p>
+                            </a>
+                        </span>
+                        <span>
+                            <a href="https://www.instagram.com/faunaguardians/" class="link">
+                                <img src="img/in.png" alt="instagram" width="35" height="35">
+                            </a>
+                            <a href="https://www.instagram.com/faunaguardians/" class="link2">
+                                <p class="link">Fauna Guardians</p>
+                            </a>
+                        </span>
+                        <span>
+                            <a href="https://www.youtube.com/channel/UCfz0MTQYrzC8WVH8FRD7x5Q" class="link">
+                                <img src="img/yt2.png" alt="youtube" width="35" height="35">
+                            </a>
+                            <p class="link">
+                                <a href="https://www.youtube.com/channel/UCfz0MTQYrzC8WVH8FRD7x5Q">@faunaguardians</a>
+                            </p>
+                        </span>
+                        <br>
+                        <em>este site foi criado para fins educativos</em>
+                    </div>
+                </div>
+            </div>
+        </body>
+        </html>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <style>
+      body{
+      background-color: #383838;
+      }
+      .navbar {
+      background-color: rgb(14, 1, 255);
+      margin-block-end: 20px;
+      margin-bottom: 0;
+      }
+      .navbar-brand img {
+      height: 50px;
+      width: auto;
+      }
+      .navbar-brand,
+      .nav-link {
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+      }
+      .navbar-nav .nav-link {
+      margin-right: 10px;
+      transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+      color: #ccc;
+      }
+      .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 41px;
+      }
+      .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      }
+      .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+      }
+      input:checked + .slider {
+      background-color: #2196F3;
+      }
+      input:checked + .slider:before {
+      transform: translateX(26px);
+      }
+      .slider.round {
+      border-radius: 34px;
+      }
+      .slider.round:before {
+      border-radius: 50%;
+      }
+      .navbar-toggler-icon {
+      background-color: #fff;
+      border-radius: 2px;
+      width: 20px;
+      height: 2px;
+      }
+      .dark-mode {
+      background-color: #333;
+      color: #fff;
+      }
+      .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+      }
+      .p{
+      background: linear-gradient(to bottom, #99ff84, #4b48ff);
+      margin: 0px;
+      padding: 20px;
+      color: white;
+      }
+      .link {
+      display: inline;
+      margin-right: 20px;
+      color: white;
+      text-decoration: none;
+      object-fit: cover;
+      transition: transform 0.3s;
+      float: center;
+      }
+      .roda{
+      margin-top: -20px;
+      height: 250px;
+      background-color: #383838;
+      color: white;
+      transition: transform 0.3s;
+      }        
+      .link2 {
+      display: inline-block;
+      margin-right: 20px;
+      color: white;
+      text-decoration: none;
+      object-fit: cover;
+      transition: transform 0.3s;
+      }
+      .link:hover{
+      color: rgb(255, 255, 255);
+      transform: scale(1.2);
+      float: center;
+      }
+      .roda .dowm_up{
+      text-align: center;
+      color: white;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
+      font-size: 4em;
+      }
+      .roda .down_meio{
+      text-align: center;
+      color: white;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, cursive;
+      font-size: 1.5em;
+      text-align: center;
+      }
+      .roda .down_down{
+      text-align: center;
+      }
+      .roda .down_down img{
+      width: 40px;
+      cursor: pointer;
+      margin: 20px;
+      padding: 5px;
+      object-fit: cover;
+      transition: transform 0.3s;
+      }
+      .roda .down_down img.hover{
+      transform: scale(1.2);
+      }
+      .link {
+      display: inline-block;
+      margin-right: 20px;
+      color: white;
+      text-decoration: none;
+      }
+      .roda .down_down img {
+      width: 35px;
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.3s;
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><img src="img/logo.png" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto text-center">
+              <li class="nav-item">
+                <a class="nav-link" href="Index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Doação.html">DOAÇÃO</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Portfólio.html">PORTFÓLIO</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Jogo.html">JOGO</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Loja.html">LOJA</a>
+            </li>
+            </ul>
+            <div class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <label class="slider round" for="darkModeToggle"></label>
+            </div>
+            <a class="nav-link" href="#"><button class="button" id="form-open"><img src="img/login-.png" width="50px" height="50px"></button></a>
+        </div>       
+    </nav>
+    <section class="home">
+        <div class="form_container">
+          <i class="uil uil-times form_close"></i>
+          <div class="form login_form">
+            <form action="#">
+              <h2>Login</h2>
+              <div class="input_box">
+                <input type="email" placeholder="Coloque seu email" required />
+                <i class="uil uil-envelope-alt email"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Coloque sua senha" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+              <div class="option_field">
+                <span class="checkbox">
+                  <input type="checkbox" id="check" />
+                  <label for="check">Lembrar-me</label>
+                </span>
+                <a href="#" class="forgot_pw">Esqueceu a senha?</a>
+              </div>
+              <div class="continue_with_google">
+                <button class="google_button"><i class="uil uil-google"></i>Continuar com o Google</button>
+              </div>
+              <button class="button">Login</button>
+              <div class="login_signup">Não tem uma conta? <a href="#" id="signup">Signup</a></div>
+            </form>
+          </div>
+          <div class="form signup_form">
+            <form action="#">
+              <h2>Signup</h2>
+              <div class="input_box">
+                <input type="email" placeholder="Coloque seu email" required />
+                <i class="uil uil-envelope-alt email"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Crie uma senha" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Confirme a senha" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+              <div class="continue_with_google">
+                <button class="google_button"><i class="uil uil-google"></i>Continuar com o Google</button>
+              </div>
+              <button class="button">Signup</button>
+              <div class="login_signup">Já tem uma conta? <a href="#" id="login">Login</a></div>
+            </form>
+          </div>
+        </div>
+        <div class="wrapper">
+            <main>
+              <section class="module parallax parallax-1">
+                <h1>FAUNA GUARDIANS</h1>
+              </section>
+        
+              <section class="module content">
+                <div class="container">
+                  <h2>Sobre Nós</h2>
+                  <p>
+                    A Fauna Guardians é uma instituição dedicada à preservação da vida selvagem e à luta contra o risco de extinção dos animais. Nossa missão é simplificar o processo de doação, eliminando a burocracia que muitas vezes impede que pessoas generosas apoiem organizações de conservação. Ao escolher a Fauna Guardians, você está contribuindo diretamente para a proteção e sobrevivência de espécies ameaçadas. Junte-se a nós nessa jornada de esperança e ação!
+                  </p>          
+                </div>
+              </section>
+              <section class="module parallax parallax-2">
+                <h1>FAUNA GUARDIANS</h1>
+              </section>
+        
+              <section class="module content">
+                <div class="container">
+                  <h2>Protegendo a Fauna para as Gerações Futuras
+                  </h2>
+                  <p>
+Na Fauna Guardians, estamos comprometidos com a preservação e proteção dos animais em risco de extinção. Reconhecemos a importância vital de cada criatura em nosso ecossistema global e a necessidade urgente de agir. Nosso objetivo é simplificar o processo de doação, eliminando a complexidade burocrática e garantindo que sua contribuição chegue diretamente às organizações não governamentais que estão na linha de frente da conservação animal.
+                  </p>          
+                </div>
+              </section>
+              <section class="module parallax parallax-3">
+                <h1>FAUNA GUARDIANS</h1>
+              </section>
+              <section class="module content">
+                <div class="container">
+                  <h2>Agradecemos por fazer parte da Fauna Guardians!</h2>
+                  <p>
+                    Sua generosidade e compromisso com a preservação da vida selvagem são admiráveis. Com sua ajuda, simplificamos doações e reduzimos burocracia para apoiar organizações de conservação. Suas contribuições beneficiam espécies em perigo e habitats, construindo um impacto positivo e duradouro. A Fauna Guardians está sempre pronta para apoiá-lo, agradecendo sua dedicação contínua à proteção de nosso mundo natural. Agradecemos por fazer parte de nossa missão.
+                    Equipe Fauna Guardians
+                  </p>          
+                </div>
+              </section>
+            </main>
+          </div>
+          <footer class="roda">
+            <div class="down_up">
+              <div class="down_meio">Nossas redes sociais<br>#FNG</div>
+              <div class="down_down">
+                <span>
+                  <a href="https://www.tiktok.com/@fauna.guadians?is_from_webapp=1&sender_device=pc" class="link">
+                    <img src="img/tk.png" alt="tiktok" width="35" height="35">
+                  </a>
+                  <a href="https://www.tiktok.com/@fauna.guadians?is_from_webapp=1&sender_device=pc" class="link2">
+                    <p class="link">@fauna.guardians</p>
+                  </a>
+                </span>
+                <span>
+                  <a href="https://www.instagram.com/faunaguardians/" class="link">
+                    <img src="img/in.png" alt="instagram" width="35" height="35">
+                  </a>
+                  <a href="https://www.instagram.com/faunaguardians/" class="link2">
+                    <p class="link">@faunaguardians</p>
+                  </a>
+                </span>
+                <span>
+                  <a href="https://www.youtube.com/channel/UCfz0MTQYrzC8WVH8FRD7x5Q" class="link">
+                    <img src="img/yt2.png" alt="youtube" width="35" height="35">
+                  </a>
+                  <p class="link">@faunaguardians</p>
+                </span>
+              </div>
+            </div>
+          </footer>
+          <script src="js/login.js"></script>
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+          <script src="https://kit.fontawesome.com/xxxxxxxxxx.js" crossorigin="anonymous"></script>
+          <script>
+            $(document).ready(function() {
+              $('#darkModeToggle').change(function() {
+                $('body').toggleClass('dark-mode');
+              });
+            });
+          </script>
+</body>
+</html>
