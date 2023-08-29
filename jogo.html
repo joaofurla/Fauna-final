@@ -255,11 +255,20 @@
         
     </header>
     <script>
+ let  erros = 0;
         function mudarCore(elemento) {
  const cores = ["red", "white"];
  const corAtual = elemento.style.backgroundColor;
  const novaCor = cores[(cores.indexOf(corAtual) + 1) % cores.length];
  elemento.style.backgroundColor = novaCor;
+
+if (novaCor === "red"){
+    erros++;
+    if (erros >= 5) {
+        alert("Você errou 5 vezes e Perdeu o Jogo");
+        location.reload()
+    }
+ }
 }   
 
 function mudarCorc(elemento) {
